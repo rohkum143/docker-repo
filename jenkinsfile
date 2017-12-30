@@ -1,0 +1,6 @@
+node('docker') {
+    stage('checkhostname') {
+	sh 'echo "hostname"'
+	}	
+}
+
