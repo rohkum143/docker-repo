@@ -1,6 +1,10 @@
 node('docker') {
     stage('checkhostname') {
-	sh 'touch /tmp/docker-${BUILD_NUMBER}'
-	}	
-}
-
+	    steps {
+             parallel (
+	             "task1": { sh 'touch /tmp/docker-${BUILD_NUMBER}' },
+	              "task2": { sh 'touch /tmp/docker1-${BUILD_NUMBER}' },
+		     )
+	                    }	
+                   }
+                }
