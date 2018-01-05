@@ -1,9 +1,19 @@
-node('docker') {
-    stage('checkhostname') {
-	    parallel (
-	             "task1": { sh 'touch /tmp/docker-${BUILD_NUMBER}' },
-	              "task2": { sh 'touch /tmp/docker1-${BUILD_NUMBER}' },
-		     )
-	                    	
-                   }
-                }
+    pipeline {
+    agent ('docker')
+    stages {
+        stage('Example Build') {
+            agent { docker 'maven:3-alpine' } 
+            steps {
+                echo 'Hello, Maven'
+                sh 'mvn --version'
+            }
+        }
+        stage('Example Test') {
+            agent { docker 'openjdk:8-jre' } 
+            steps {
+                echo 'Hello, JDK'
+                sh 'java -version'
+            }
+        }
+    }
+}
