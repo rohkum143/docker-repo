@@ -1,5 +1,6 @@
     pipeline {
-    agent ('docker')
+    agent any
+    node('docker') {
     stages {
         stage('Example Build') {
             agent { docker 'maven:3-alpine' } 
@@ -17,3 +18,4 @@
         }
     }
 }
+    }
