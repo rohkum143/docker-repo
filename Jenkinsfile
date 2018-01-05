@@ -1,6 +1,5 @@
-    node('docker') {
-    stages {
-        stage('Example Build') {
+node('docker') {
+       stage('Example Build') {
             agent { docker 'maven:3-alpine' } 
             steps {
                 echo 'Hello, Maven'
@@ -15,5 +14,5 @@
             }
         }
     }
-}
+
     
