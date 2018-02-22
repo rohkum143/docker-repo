@@ -13,7 +13,7 @@ node ('master'){
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install"
       } else {
-         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean install/)
+         bat(/"${1111mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean install/)
       }
    }
    stage('SonarQube analysis') {
