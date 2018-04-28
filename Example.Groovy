@@ -1,4 +1,4 @@
-def exampleMethod ( String my-dog ) {
+def exampleMethod (String my-dog) {
   echo "my dog is ${my-dog} "
 }
 return this;
