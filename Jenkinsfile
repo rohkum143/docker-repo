@@ -14,4 +14,6 @@ node {
     def example = load "${rootDir}/Example.Groovy"
      example.test("tom")
     // example.otherExampleMethod()
+    def shortCommit = sh(returnStdout: true, script: "git log -n 1 --pretty=format:'%h'").trim()
+    println (shortCommit)
 }
