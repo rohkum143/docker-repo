@@ -1,4 +1,4 @@
-def exampleMethod(String whoAreYou) {
+def test(String whoAreYou) {
   echo "my dog is ${whoAreYou} "
 }
 return this;
