@@ -12,6 +12,6 @@ node {
 
     // point to exact source file
     def example = load "${rootDir}/Example.Groovy"
-     Example.test("tom")
+     example.test("tom")
     // example.otherExampleMethod()
 }
