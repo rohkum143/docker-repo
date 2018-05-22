@@ -2,6 +2,7 @@ node {
     // Git checkout before load source the file
     checkout scm
 
+	echo "${env.TAG}"
 	def proc = "git rev-parse ${env.TAG}"
     // To know files are checked out or not
     /* sh '''
@@ -9,11 +10,11 @@ node {
     ''' */
 	if ( "${proc}" != 'null') {
 		
-			echo "Found test tag"
+			echo "Found ${env.TAG} tag"
 	        currentBuild.result = 'FAILED'		 
 	}	 
 	else {
-              echo "create tag for test"
+              echo "create tag for ${env.TAG}"
 		 }
    /* git push origin ${mvn_version}
          fi "
