@@ -6,7 +6,7 @@ node {
 	sh " git rev-parse test > commandresult"
 	
 	def proc = readFile('commandresult').trim()
-	
+	println proc
 		//def proc = "git rev-parse test"
     // To know files are checked out or not
     /* sh '''
