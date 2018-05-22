@@ -6,7 +6,14 @@ node {
     sh '''
         ls -lhrt
     '''
-
+    sh " if git rev-parse test ;then
+             echo "Found test tag"
+	         exit 1
+         else
+              echo "create tag for test"
+              git tag test
+    //git push origin ${mvn_version}
+         fi "
     def rootDir = pwd()
     println("Current Directory: " + rootDir)
 
