@@ -6,7 +6,7 @@ node {
     sh '''
         ls -lhrt
     '''
-	if (git rev-parse test) {
+	if git rev-parse test {
 		echo "Found test tag" }
 	         exit 1
 	else {
