@@ -10,7 +10,7 @@ node {
     ''' */
 	//if ( "${proc}" != 'null') {
 	
-	if ( !proc.contains("fatal"))
+	if ( !proc.contains("fatal")) {
 			echo "Found ${env.TAG} tag"
 	        currentBuild.result = 'FAILED'		 
 	}	 
