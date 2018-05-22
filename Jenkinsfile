@@ -5,8 +5,10 @@ node {
 	echo "${env.TAG}"
 	def proc = "git rev-parse ${env.TAG}".execute()
 	
+	echo "${proc}"
+	
 	//def proc = "fatal"
-	println proc;
+	println proc
     // To know files are c;hecked out or not
     /* sh '''
         ls -lhrt
