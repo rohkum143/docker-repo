@@ -1,26 +1,24 @@
 node {
     // Git checkout before load source the file
-    checkout scm
+   // checkout scm
 
-	echo "${env.TAG}"
-	def proc = "git rev-parse ${env.TAG}".execute()
+	sh "git clone https://github.com/rohkum143/docker-repo.git"
+	sh " git rev-parse test > commandresult"
 	
-	echo "${proc}"
+	def proc = readFile('commandresult').trim()
 	
-	//def proc = "fatal"
-	println proc
-    // To know files are c;hecked out or not
+		//def proc = "git rev-parse test"
+    // To know files are checked out or not
     /* sh '''
         ls -lhrt
     ''' */
-	//if ( "${proc}" != 'null') {
-	
-	if ( !proc.contains("fatal")) {
-			echo "Found ${env.TAG} tag"
+	if ( proc.contains != 'null') {
+		
+			echo "Found test tag"
 	        currentBuild.result = 'FAILED'		 
 	}	 
 	else {
-              echo "create tag for ${env.TAG}"
+              echo "create tag for test"
 		 }
    /* git push origin ${mvn_version}
          fi "
