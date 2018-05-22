@@ -4,7 +4,9 @@ node {
 
 	echo "${env.TAG}"
 	def proc = "git rev-parse ${env.TAG}"
-    // To know files are checked out or not
+	
+	println proc;
+    // To know files are c;hecked out or not
     /* sh '''
         ls -lhrt
     ''' */
