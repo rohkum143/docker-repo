@@ -3,8 +3,9 @@ node {
     checkout scm
 
 	echo "${env.TAG}"
-	def proc = "git rev-parse ${env.TAG}".execute()
+	//def proc = "git rev-parse ${env.TAG}".execute()
 	
+	def proc = "fatal"
 	println proc;
     // To know files are c;hecked out or not
     /* sh '''
