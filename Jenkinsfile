@@ -7,7 +7,7 @@ node {
     /* sh '''
         ls -lhrt
     ''' */
-	if ( proc.status != 'null') {
+	if ( ${proc} != 'null') {
 		
 			echo "Found test tag"
 	        currentBuild.result = 'FAILED'		 
