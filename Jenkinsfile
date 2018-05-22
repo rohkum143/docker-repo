@@ -8,8 +8,9 @@ node {
     /* sh '''
         ls -lhrt
     ''' */
-	if ( "${proc}" != 'null') {
-		
+	//if ( "${proc}" != 'null') {
+	
+	if ( !proc.contains("fatal"))
 			echo "Found ${env.TAG} tag"
 	        currentBuild.result = 'FAILED'		 
 	}	 
