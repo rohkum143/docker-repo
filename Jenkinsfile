@@ -2,7 +2,7 @@ node {
     // Git checkout before load source the file
     checkout scm
 
-		def proc = "git rev-parse test"
+	def proc = "git rev-parse ${env.TAG}"
     // To know files are checked out or not
     /* sh '''
         ls -lhrt
